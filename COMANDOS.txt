@@ -1,0 +1,5 @@
+Novo Projeto:
+npx create-react-app organo
+
+Iniciar o Servidor:
+npm start
