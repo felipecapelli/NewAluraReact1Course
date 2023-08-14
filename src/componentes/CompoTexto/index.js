@@ -4,12 +4,26 @@ const CampoTexto = (props) => {
 
     //const placeholderUsandoTemplateString = `${props.placeholder}....` //da pra fazer com template string também
 
+    /*
+    //let valor = 'teste' //desse jeito não funciona
+    //const [valor, setValor] = useState('teste') // desse jeito funciona
+
+    const aoDigitado = (evento) => {
+        setValor (evento.target.value)
+        console.log(valor)
+    }*/
+
+    const aoDigitado = (evento) => {
+       props.aoAlterado(evento.target.value) 
+    }
+
     return(
         <div className='campo-texto'>
             <label>
                 {props.label}
             </label>
-            <input required={props.obrigatorio} placeholder={props.placeholder}/>
+            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={props.placeholder}/>
+            {/*<input value={valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={props.placeholder}/>*/}
             {/*<input placeholder={placeholderUsandoTemplateString}/>*/}
         </div>
     )
